@@ -493,7 +493,7 @@ async def handle_upcancel_cb(e):
         db.cancel_download(data[1], data[2])
         await e.answer("UPLOAD CANCELED IN ADMIN MODE XD ;)", alert=True)
     else:
-        await e.answer("Can't Cancel others upload 😡", alert=True)
+        await e.answer("Fuck you 😡", alert=True)
 
 
 async def callback_handler_canc(e):
@@ -538,7 +538,7 @@ async def callback_handler_canc(e):
         await cancel_torrent(hashid, is_aria, is_mega)
         await e.answer("Leech has been canceled in ADMIN MODE XD ;)", alert=True)
     else:
-        await e.answer("Can't Cancel others leech 😡", alert=True)
+        await e.answer("Fuck You 😡", alert=True)
 
 
 async def handle_exec_message_f(e):
@@ -643,7 +643,7 @@ async def set_password_zip(message):
 
 
 async def start_handler(event):
-    msg = "Hello This is TorToolkitX running on heroku an instance of <a href='https://github.com/XcodersHub/TorToolkitX'>This Repo</a>. Try the repo for yourself and dont forget to put a STAR and fork."
+    msg = "Sorry, you are not authorized to use this bot.join Niaz Cloud to use this bot😀"
     await event.reply(msg, parse_mode="html")
 
 
@@ -815,7 +815,7 @@ async def about_me(message):
         f"<b>Version</b>: <code>{__version__}</code>\n"
         f"<b>Telethon Version</b>: {telever}\n"
         f"<b>Pyrogram Version</b>: {pyrover}\n"
-        "<b>Created By</b>: @Yaknight\n\n"
+        "<b>hosted by</b>: @igen1x\n\n"
         "<b>Modified By</b>: @XcodersHub\n\n"
         "<u>Currents Configs:-</u>\n\n"
         f"<b>Bot Uptime:-</b> {diff}\n"
