@@ -69,31 +69,31 @@ class QBTask(Status):
 
     async def create_message(self):
         msg = "<b>Downloading:</b> <code>{}</code>\n".format(self._torrent.name)
-        msg += "<b>Down:</b> {} <b>Up:</b> {}\n".format(
+        msg += "<b>Down:🔻</b> {} <b>Up🔺:</b> {}\n".format(
             human_readable_bytes(self._torrent.dlspeed, postfix="/s"),
             human_readable_bytes(self._torrent.upspeed, postfix="/s"),
         )
-        msg += "<b>Progress:</b> {} - {}%\n".format(
+        msg += "<b>Progress🚀:</b> {} - {}%\n".format(
             self.progress_bar(self._torrent.progress),
             round(self._torrent.progress * 100, 2),
         )
-        msg += "<b>Downloaded:</b> {} of {}\n".format(
+        msg += "<b>Downloaded:🔻</b> {} of {}\n".format(
             human_readable_bytes(self._torrent.downloaded),
             human_readable_bytes(self._torrent.total_size),
         )
-        msg += "<b>ETA:</b> <b>{}</b>\n".format(
+        msg += "<b>ETA⏲️:</b> <b>{}</b>\n".format(
             human_readable_timedelta(self._torrent.eta)
         )
         msg += "<b>S:</b>{} <b>L:</b>{}\n".format(
             self._torrent.num_seeds, self._torrent.num_leechs
         )
-        msg += "<b>Using engine:</b> <code>qBittorrent</code>"
+        msg += "<b>Using engine✈️:</b> <code>qBittorrent</code>"
 
         return msg
 
     async def get_state(self):
         # stalled
-        if self._torrent.state == "stalledDL":
+        if self._torrent.state == "stalledDL⚠️":
             return "Torrent <code>{}</code> is stalled(waiting for connection) temporarily.".format(
                 self._torrent.name
             )
@@ -229,21 +229,21 @@ class ARTask(Status):
         except:
             pass
 
-        msg = "<b>Downloading:</b> <code>{}</code>\n".format(downloading_dir_name)
-        msg += "<b>Down:</b> {} <b>Up:</b> {}\n".format(
+        msg = "<b>Downloading😀:</b> <code>{}</code>\n".format(downloading_dir_name)
+        msg += "<b>Down:🔻</b> {} <b>Up:</b> {}\n".format(
             self._dl_file.download_speed_string(), self._dl_file.upload_speed_string()
         )
-        msg += "<b>Progress:</b> {} - {}%\n".format(
+        msg += "<b>Progress🚀:</b> {} - {}%\n".format(
             self.progress_bar(self._dl_file.progress / 100),
             round(self._dl_file.progress, 2),
         )
-        msg += "<b>Downloaded:</b> {} of {}\n".format(
+        msg += "<b>Downloaded😊:</b> {} of {}\n".format(
             human_readable_bytes(self._dl_file.completed_length),
             human_readable_bytes(self._dl_file.total_length),
         )
-        msg += "<b>ETA:</b> <b>{}</b>\n".format(self._dl_file.eta_string())
+        msg += "<b>ETA⏲️:</b> <b>{}</b>\n".format(self._dl_file.eta_string())
         msg += "<b>Conns:</b>{} <b>\n".format(self._dl_file.connections)
-        msg += "<b>Using engine:</b> <code>Aria2 For DirectLinks</code>"
+        msg += "<b>Using engine✈️:</b> <code>Aria2 For DirectLinks</code>"
 
         return msg
 
@@ -367,9 +367,9 @@ class MegaDl(Status):
     async def create_message(self):
         # Getting the vars pre handed
 
-        msg = "<b>Downloading:</b> <code>{}</code>\n".format(self._dl_info["name"])
-        msg += "<b>Speed:</b> {}\n".format(human_readable_bytes(self._dl_info["speed"]))
-        msg += "<b>Progress:</b> {} - {}%\n".format(
+        msg = "<b>Downloading😀:</b> <code>{}</code>\n".format(self._dl_info["name"])
+        msg += "<b>Speed🚀:</b> {}\n".format(human_readable_bytes(self._dl_info["speed"]))
+        msg += "<b>Progress⌛:</b> {} - {}%\n".format(
             self.progress_bar(
                 (self._dl_info["completed_length"] / self._dl_info["total_length"])
             ),
@@ -379,13 +379,13 @@ class MegaDl(Status):
                 2,
             ),
         )
-        msg += "<b>Downloaded:</b> {} of {}\n".format(
+        msg += "<b>Downloaded😊:</b> {} of {}\n".format(
             human_readable_bytes(self._dl_info["completed_length"]),
             human_readable_bytes(self._dl_info["total_length"]),
         )
-        msg += "<b>ETA:</b> <b>N/A</b>\n"
+        msg += "<b>ETA🕛:</b> <b>N/A</b>\n"
 
-        msg += "<b>Using engine:</b> <code>Mega DL</code>"
+        msg += "<b>Using engine🚕:</b> <code>Mega DL</code>"
 
         return msg
 
